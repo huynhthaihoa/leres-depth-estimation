@@ -1,0 +1,8 @@
+input_dir: /hdd/hoa_2/models/depth/yolo_new/new
+output_path: /hdd/hoa_2/checkpoints/depth/nyu_tiyolov8s_metricleres_userelu_5e-5.onnx
+
+# TFlite model input size
+input_width: 640
+input_height: 480
+
+# quantize: True

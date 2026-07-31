@@ -1,0 +1,10 @@
+weight_path: /hdd/hoa/models/pytorch/depth/nyu/mobilenetv4/nyushift2_mobilenetv4_newcrfsdpt_interpolate_msgloss_cutmix/2025_05_18_10_39_18/best_abs_rel_0.11050_47_108720.ckpt
+output_path: /hdd/hoa/models/onnx/depth/norm/nyushift2_mobilenetv4_newcrfsdpt_interpolate_msgloss_cutmix.onnx
+
+simplify: True
+
+# ONNX model input size
+input_width: 640
+input_height: 480
+
+# quantize: True

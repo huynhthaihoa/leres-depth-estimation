@@ -1,0 +1,10 @@
+input_dir: /hdd/hoa_2/models/depth/yolo_new/new
+output_dir: /hdd/hoa_2/models/depth/yolo_new/new
+
+simplify: True
+
+# ONNX model input size
+input_width: 640
+input_height: 480
+
+# quantize: True

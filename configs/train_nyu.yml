@@ -1,0 +1,45 @@
+comment: apg-oms-tiyolov8sdepthmodel-1.1
+
+mode: train
+framework: 2
+model_name: nyu_tiyolov8s_metricleres_original
+encoder: tiyolov8s
+decoder: metricleres
+pretrained: True
+normalize: False
+
+replace_silu: True
+use_customsilu: True
+
+batch_size: 16
+learning_rate_ratio: 1.0
+
+dataset: nyu
+filenames_file: data_splits/nyu_train.csv
+data_path: /hdd/Automotive_Perception_Group/team_2/datasets/nyu
+
+num_epochs: 50
+learning_rate: 0.00005
+weight_decay: 1e-2
+adam_eps: 1e-3
+num_threads: 1
+input_height: 480
+input_width: 640 
+max_depth: 10
+min_depth: 0.001
+do_random_rotate: True
+degree: 2.5
+
+log_dir: /hdd/hoa_2/models/depth/mars/
+gpu: 0
+init_type: normal
+loss_func: zoe
+log_freq: 100
+do_online_eval: True
+# eval_freq: 500
+data_path_eval: /hdd/Automotive_Perception_Group/team_2/datasets/nyu
+filenames_file_eval: data_splits/nyu_test.csv
+eigen_crop: True
+
+use_early_stopping: True
+lr_patience: 5

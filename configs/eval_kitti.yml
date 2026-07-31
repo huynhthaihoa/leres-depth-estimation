@@ -1,0 +1,10 @@
+filenames_file_eval: data_splits/kitti_test.csv
+data_path_eval: /hdd/Automotive_Perception_Group/team_2/kitti_dataset
+dataset: kitti
+max_depth: 80
+min_depth: 0.001
+do_kb_crop: True
+garg_crop: True
+weight_path: /hdd/hoa/checkpoints/kitti_tiyolov8s_newcrfstruncate_interpolate.onnx
+normalize: False
+to_grayscale: False

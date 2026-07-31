@@ -1,0 +1,8 @@
+weight_path: /hdd/hoa/models/depth/nyushift_damoyolot_newcrfsdpt_interpolate/model-95130-best_log10_0.04589.ckpt
+output_path: /hdd/hoa/tflite/nyushift_damoyolot_newcrfsdpt_interpolate.tflite
+
+# TFlite model input size
+input_width: 640
+input_height: 480
+
+# quantize: True

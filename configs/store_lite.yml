@@ -1,0 +1,14 @@
+project_name: Hyundai_Mobis_OMS
+model_application: DepthEstimation_dev
+model_architecture: Unet
+model_version: 1.0
+
+input_height: 480
+input_width: 640
+
+source_code: https://github.com/DeltaX-AI-Lab/mobis-oms-depth-estimation
+pre_processing: ade20k
+post_processing: ade20k
+
+onnx_path: /hdd/hoa_2/checkpoints/depth/nyu_tiyolov8s_metricleres.onnx
+train_config_path: /hdd/hoa_2/models/depth/nyu_tiyolov8s_metricleres/train.yml

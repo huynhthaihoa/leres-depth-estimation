@@ -1,0 +1,9 @@
+filenames_file_eval: data_splits/nyu_test.csv
+data_path_eval: /hdd/automotive_perception_group/oms/datasets/NYUv2_dataset/test
+dataset: nyu
+max_depth: 10
+min_depth: 0.001
+eigen_crop: True
+weight_path: /hdd/hoa/models/pytorch/depth/nyu/mobilenetv4/nyushift2_mobilenetv4conv_medium_e250_r384_in12k_ft_in1k_newcrfsdpt_interpolate_cutmix/2025_05_20_16_25_33/best_silog_11.50896_47_108720.ckpt
+normalize: False
+to_grayscale: False

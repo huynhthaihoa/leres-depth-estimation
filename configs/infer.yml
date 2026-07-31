@@ -1,0 +1,20 @@
+# common path
+input: 0 
+#D:/DOCUMENTS/cpd/WIN_20240704_14_12_51_Pro.mp4
+weight_path: checkpoints/leopard/leopard_ppyoloes_newcrfsdpt.onnx
+# weight_path: checkpoints/nyugrayscale_shift_tiyolov8s_newcrfstruncate_customsilu_interpolate_aug_v11.onnx
+normalize: False
+use_cuda: True
+use_tta: False
+# original_scale: True
+to_grayscale: False
+
+# input is image
+# output_depth_path:
+# output_image_path:
+
+# input is camera/video
+# output_video_path:  
+
+# to show the visualized depth output or not
+show: True
