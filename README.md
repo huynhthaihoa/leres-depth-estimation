@@ -497,7 +497,6 @@ pixelformer
 
 ## References
 
-- [MetricLeReS](https://github.com/DeltaX-AI-Lab/MetricLeReS)
 - [LeReS](https://github.com/aim-uofa/AdelaiDepth/tree/main/LeReS)
 - [NeWCRFs](https://github.com/aliyun/NeWCRFs)
 - [PixelFormer](https://github.com/ashutosh1807/PixelFormer)
