@@ -1,10 +1,6 @@
-# APG METRIC DEPTH ESTIMATION
+# METRIC LERES DEPTH ESTIMATION
 
-> This repository in an experimental, up-to-date version of [MetricLeReS](https://github.com/DeltaX-AI-Lab/MetricLeReS).
-
-> If one wants to access the custom codebase for image classification model, please refer to branch [classification](https://github.com/DeltaX-AI-Lab/apg-depth-estimation/tree/classification).
-
-A metric depth estimation model based on LeReS architecture. The model infers the absolute distance (in meters) from each pixel to the camera.
+A metric depth estimation model based on the LeReS architecture. The model infers the absolute distance (in meters) from each pixel to the camera.
 
 ## Contents
 
@@ -40,13 +36,13 @@ A metric depth estimation model based on LeReS architecture. The model infers th
 - The original architecture of this model is derived from [LeReS](https://github.com/aim-uofa/AdelaiDepth/tree/main/LeReS), that's why we named it **MetricLeReS**
 
 ## 2. Requirements
-- Install the Anaconda env with the following cli:
+- Install the Anaconda env with the following CLI:
 ```
 conda env create -f envs/ti_env.yml
 ```
 - Activate the env:
 ```
-conda ativate ti
+conda activate ti
 ```
 ## 3. Pretrained models
 
@@ -60,20 +56,20 @@ Please refer to the [evaluation guideline](assets/eval.md)
 
 ## 6. Inference & Integration
 
-To use our inference scripts or integrate ONNX model to your solution, please refer to the [inference & integration guideline](assets/infer.md)
+To use our inference scripts or integrate an ONNX model into your solution, please refer to the [inference & integration guideline](assets/infer.md)
 
 ## 7. Converting model to ONNX format
 
-> **Note**: to guarantee the ONNX model can run on TI, one is suggested to use the TI environment 
+> **Note**: To guarantee the ONNX model can run on TI, it is suggested to use the TI environment 
 
 ### 7.1. Converting a single model
 
-- Update the following value in YAML file ```configs/convert_onnx.yml```:
+- Update the following value in the YAML file ```configs/convert_onnx.yml```:
 
     - **weight_path**: model file path (ckpt file)
-    - **output_path**: ONNX output file path (default is set as the same name with model file path)
-    - **input_width**: input width, this value must be divisible by 32
-    - **input_height**: input height, this value must be divisible by 32
+    - **output_path**: ONNX output file path (default is set to the same name as the model file path)
+    - **input_width**: input width; this value must be divisible by 32
+    - **input_height**: input height; this value must be divisible by 32
     - **simplify**: if one wants to use [ONNX Simplifier](https://github.com/daquexian/onnx-simplifier) to simplify the output ONNX model, set it to `True`. Otherwise set is as `False` 
 
 - Run the following cli:
@@ -85,15 +81,15 @@ python convert_onnx.py -c configs/convert_onnx.yml
 <!-- > **Note**:  please make sure convert_onnx.py and convert_batch_onnx.py are placed at the same directory -->
 > **Note**: Each model will be converted into its corresponding ONNX model with the same name (just replace extension to `onnx` format)
 
-- Update the following value in YAML file ```configs/convert_batch_onnx.yml```:
+- Update the following value in the YAML file ```configs/convert_batch_onnx.yml```:
 
-    - **input_dir**: directory contains models (ckpt files)
-    - **output_dir**: directory contains output ONNX models
-    - **input_width**: input width, this value must be divisible by 32
-    - **input_height**: input height, this value must be divisible by 32
-    - **simplify**: if one wants to use [ONNX Simplifier](https://github.com/daquexian/onnx-simplifier) to simplify the output ONNX model, set it to `True`. Otherwise set is as `False` 
+    - **input_dir**: directory containing models (ckpt files)
+    - **output_dir**: directory containing output ONNX models
+    - **input_width**: input width; this value must be divisible by 32
+    - **input_height**: input height; this value must be divisible by 32
+    - **simplify**: if one wants to use [ONNX Simplifier](https://github.com/daquexian/onnx-simplifier) to simplify the output ONNX model, set it to `True`. Otherwise, set is as `False` 
 
-- Run the following cli:
+- Run the following CLI:
 
 ```bash
 python convert_batch_onnx.py -c configs/convert_batch_onnx.yml
@@ -105,31 +101,31 @@ python convert_batch_onnx.py -c configs/convert_batch_onnx.yml
 
 ### 8.1. Converting a single model
 
-- Update the following value in YAML file ```configs/convert_tflite.yml```:
+- Update the following value in the YAML file ```configs/convert_tflite.yml```:
 
     - **weight_path**: model file path (ckpt file)
-    - **output_path**: TFLite output file path (default is set as the same name with model file path)
-    - **input_width**: input width, this value must be divisible by 32
-    - **input_height**: input height, this value must be divisible by 32
+    - **output_path**: TFLite output file path (default is set to the same name as the model file path)
+    - **input_width**: input width; this value must be divisible by 32
+    - **input_height**: input height; this value must be divisible by 32
 
-- Run the following cli:
+- Run the following CLI:
 
 ```bash
 python convert_tflite.py -c configs/convert_tflite.yml
 ```
 ### 8.2. Converting multiple models
 <!-- > **Note**:  please make sure convert_onnx.py and convert_batch_onnx.py are placed at the same directory -->
-> **Note**: Each model will be converted into its corresponding TFLite model with the same name (just replace extension to `tflite` format)
+> **Note**: Each model will be converted into its corresponding TFLite model with the same name (just replace the extension with the `tflite` format)
 
 
-- Update the following value in YAML file ```configs/convert_batch_tflite.yml```:
+- Update the following value in the YAML file ```configs/convert_batch_tflite.yml```:
 
-    - **input_dir**: directory contains models (ckpt files)
-    - **output_dir**: directory contains output TFLite models
-    - **input_width**: input width, this value must be divisible by 32
-    - **input_height**: input height, this value must be divisible by 32
+    - **input_dir**: directory containing models (ckpt files)
+    - **output_dir**: directory containing output TFLite models
+    - **input_width**: input width; this value must be divisible by 32
+    - **input_height**: input height; this value must be divisible by 32
 
-- Run the following cli:
+- Run the following CLI:
 
 ```bash
 python convert_batch_tflite.py -c configs/convert_batch_tflite.yml
