@@ -510,7 +510,3 @@ pixelformer
 See [`LICENSE`](LICENSE).
 
 This repository integrates or derives components from multiple upstream projects. Refer to the upstream projects and the compatibility table for their respective licenses and attribution requirements.
-
-## Related branch
-
-The custom image-classification codebase is available in the [`classification`](https://github.com/DeltaX-AI-Lab/apg-depth-estimation/tree/classification) branch of the original project.
