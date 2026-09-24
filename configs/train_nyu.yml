@@ -1,4 +1,4 @@
-comment: apg-oms-tiyolov8sdepthmodel-1.1
+comment: nyu_metric_depth
 
 mode: train
 framework: 2
@@ -16,7 +16,7 @@ learning_rate_ratio: 1.0
 
 dataset: nyu
 filenames_file: data_splits/nyu_train.csv
-data_path: /hdd/Automotive_Perception_Group/team_2/datasets/nyu
+data_path: path/to/nyu
 
 num_epochs: 50
 learning_rate: 0.00005
@@ -30,14 +30,14 @@ min_depth: 0.001
 do_random_rotate: True
 degree: 2.5
 
-log_dir: /hdd/hoa_2/models/depth/mars/
+log_dir: path/to/log_dir/
 gpu: 0
 init_type: normal
 loss_func: zoe
 log_freq: 100
 do_online_eval: True
 # eval_freq: 500
-data_path_eval: /hdd/Automotive_Perception_Group/team_2/datasets/nyu
+data_path_eval: path/to/nyu
 filenames_file_eval: data_splits/nyu_test.csv
 eigen_crop: True
 

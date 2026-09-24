@@ -416,7 +416,7 @@ class HGNetv2(BaseEncoder):
             'url_coco': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_s_coco.pth',
             'url_object365': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_s_obj365.pth',
             'url': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/PPHGNetV2_B0_stage1.pth',
-            'path_deim': '/hdd/hoa/deim/deim_dfine_hgnetv2_s_coco_120e.pth'
+            'path_deim': 'weights/deim/deim_dfine_hgnetv2_s_coco_120e.pth'
         },
         'B1': {
             'stem_channels': [3, 24, 32],
@@ -448,7 +448,7 @@ class HGNetv2(BaseEncoder):
             'url_cocoobject365': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_m_obj2coco.pth',# 
             'url_coco': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_m_coco.pth',
             'url_object365': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_m_obj365.pth',
-            'path_deim': '/hdd/hoa/deim/deim_dfine_hgnetv2_m_coco_90e.pth'
+            'path_deim': 'weights/deim/deim_dfine_hgnetv2_m_coco_90e.pth'
 
         },
         'B3': {
@@ -481,7 +481,7 @@ class HGNetv2(BaseEncoder):
             'url_cocoobject365': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_l_obj2coco.pth',# 
             'url_coco': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_l_coco.pth',
             'url_object365': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_l_obj365_e23.pth',
-            'path_deim': '/hdd/hoa/deim/deim_dfine_hgnetv2_l_coco_50e.pth'
+            'path_deim': 'weights/deim/deim_dfine_hgnetv2_l_coco_50e.pth'
         },
         'B5': {
             'stem_channels': [3, 32, 64],
@@ -499,7 +499,7 @@ class HGNetv2(BaseEncoder):
             'url_cocoobject365': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_x_obj2coco.pth', #
             'url_coco': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_x_coco.pth',
             'url_object365': 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_x_obj365.pth',
-            'path_deim': '/hdd/hoa/deim/deim_dfine_hgnetv2_x_coco_50e.pth'
+            'path_deim': 'weights/deim/deim_dfine_hgnetv2_x_coco_50e.pth'
         },
         'B6': {
             'stem_channels': [3, 48, 96],

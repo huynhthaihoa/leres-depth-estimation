@@ -447,7 +447,7 @@ class DEIM(BaseEncoder):
             depth_mult = 1
             act = 'silu'  
             
-            model_path = '/hdd/hoa/deim/deim_dfine_hgnetv2_s_coco_120e.pth'
+            model_path = 'weights/deim/deim_dfine_hgnetv2_s_coco_120e.pth'
             # if architecture.startswith('cocoobject365') is True:
             #     model_path = 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_s_obj2coco.pth'
             # elif architecture.startswith('object365') is True:
@@ -476,7 +476,7 @@ class DEIM(BaseEncoder):
             depth_mult = 0.67
             act = 'silu' 
 
-            model_path = '/hdd/hoa/deim/deim_dfine_hgnetv2_m_coco_90e.pth'
+            model_path = 'weights/deim/deim_dfine_hgnetv2_m_coco_90e.pth'
             # if architecture.startswith('cocoobject365') is True:
             #     model_path = 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_m_obj2coco.pth'
             # elif architecture.startswith('object365') is True:
@@ -505,7 +505,7 @@ class DEIM(BaseEncoder):
             depth_mult = 1
             act = 'silu'    
             
-            model_path = '/hdd/hoa/deim/deim_dfine_hgnetv2_l_coco_50e.pth'
+            model_path = 'weights/deim/deim_dfine_hgnetv2_l_coco_50e.pth'
             # if architecture.startswith('cocoobject365') is True:
             #     model_path = 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_l_obj2coco.pth'
             # elif architecture.startswith('object365') is True:
@@ -534,7 +534,7 @@ class DEIM(BaseEncoder):
             depth_mult = 1
             act = 'silu'             
 
-            model_path = '/hdd/hoa/deim/deim_dfine_hgnetv2_x_coco_50e.pth'
+            model_path = 'weights/deim/deim_dfine_hgnetv2_x_coco_50e.pth'
             # if architecture.startswith('cocoobject365') is True:
             #     model_path = 'https://github.com/Peterande/storage/releases/download/dfinev1.0/dfine_x_obj2coco.pth'
             # elif architecture.startswith('object365') is True:

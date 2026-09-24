@@ -260,6 +260,7 @@ def train(gpu, ngpus_per_node, args):
         
     # load weight & optimizer from checkpoint
     optimizer_state_dict = None
+    scheduler_state_dict = None
     if args.weight_path != '':
         if os.path.isfile(args.weight_path):
             logger.info("== Loading checkpoint '{}'".format(args.weight_path))
@@ -285,7 +286,7 @@ def train(gpu, ngpus_per_node, args):
                     optimizer_state_dict = checkpoint['optimizer']
                 
                 if 'scheduler' in list(checkpoint.keys()):
-                    scheduler.load_state_dict(checkpoint['scheduler'])
+                    scheduler_state_dict = checkpoint['scheduler']
                 
                 if 'global_step' in list(checkpoint.keys()):
                     global_step = checkpoint['global_step']
@@ -449,7 +450,10 @@ def train(gpu, ngpus_per_node, args):
     else:
         # scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=)
         scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=args.lr_patience,threshold_mode='abs', min_lr=1e-8, verbose=True)
-    
+
+    if scheduler_state_dict is not None:
+        scheduler.load_state_dict(scheduler_state_dict)
+
     # Use EMA
     ema = None
     if args.use_ema:

@@ -1,9 +1,9 @@
 filenames_file_eval: data_splits/nyu_test.csv
-data_path_eval: /hdd/automotive_perception_group/oms/datasets/NYUv2_dataset/test
+data_path_eval: path/to/nyu/test
 dataset: nyu
 max_depth: 10
 min_depth: 0.001
 eigen_crop: True
-input_dir: /hdd/hoa/models/onnx/depth/norm
+input_dir: path/to/models
 normalize: True
 to_grayscale: False

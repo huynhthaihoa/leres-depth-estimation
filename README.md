@@ -95,9 +95,9 @@ conda env create -f envs/ti_env.yml
 conda activate ti
 ```
 
-### 3. Download a pretrained model
+### 3. Get a model
 
-Pretrained checkpoints and exported models are listed in the [model zoo](assets/modelzoo.md).
+Pretrained weights are not publicly distributed. Train a model as described in [Training](#training), or use a checkpoint or exported model you already have. Reference results are listed in the [model zoo](assets/modelzoo.md).
 
 ### 4. Run inference
 
@@ -130,9 +130,7 @@ For video or webcam inference, press `q` to stop the stream.
 
 ## Pretrained models
 
-Available PyTorch and ONNX models are documented in the [model zoo](assets/modelzoo.md).
-
-The model zoo includes models trained for:
+Pretrained weights are not publicly distributed. The [model zoo](assets/modelzoo.md) lists reference results for PyTorch and ONNX models trained on:
 
 - NYUv2 with a maximum depth of 10 meters
 - KITTI with a maximum depth of 80 meters
@@ -140,7 +138,7 @@ The model zoo includes models trained for:
 - ImageNet-normalized and non-normalized inputs
 - PyTorch and ONNX deployment
 
-When using a pretrained model, make sure the inference configuration matches the model's preprocessing settings:
+When running a trained model, make sure the inference configuration matches the model's preprocessing settings:
 
 - `normalize`
 - `to_grayscale`

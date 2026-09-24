@@ -23,7 +23,7 @@ if __name__ == '__main__':
     parser.add_argument('--data_path_eval',            type=str,   help='path to the data for evaluation', required=False)
     parser.add_argument('--filenames_file_eval',       type=str,   help='path to the filenames text file for evaluation', required=False)
 
-    # parser.add_argument('-r', '--root', help='Root directory', type=str, default='/hdd/team_2/robodepth/nyu')
+    # parser.add_argument('-r', '--root', help='Root directory', type=str, default='path/to/nyu')
     parser.add_argument('-d', '--dataset',                   type=str,   help='dataset to train on, kitti or nyu', default='nyu')
 
     parser.add_argument('-w', '--weight_path',           type=str,   help='TFLite file path', default='')

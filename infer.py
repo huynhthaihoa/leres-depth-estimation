@@ -204,7 +204,9 @@ if __name__ == '__main__':
                 
     # Read input
     input = args.input
-    if isinstance(input, str) and (input.endswith('png') or input.endswith('jpg') or input.endswith('jpeg') or input.endswith('png')): # input is image
+    if isinstance(input, str) and input.isdigit(): # camera index passed via CLI
+        input = int(input)
+    if isinstance(input, str) and input.lower().endswith(('png', 'jpg', 'jpeg', 'bmp')): # input is image
         image = cv2.imread(input)
         if is_onnx_model or is_tflite_model:
             depth = model(image, args.to_grayscale)
@@ -213,17 +215,15 @@ if __name__ == '__main__':
             
             if is_cuda_available:
                 image_tensor = image_tensor.to("cuda:0") 
-            depth = model(image_tensor)  
-            
-            if args.use_tta:
-                image_tensor_flipped = flip_lr(image_tensor)
-                depth_flipped = model(image_tensor_flipped)
-                depth = post_process_depth(depth, depth_flipped)
-            
-            if is_cuda_available:
-                depth = depth.cpu().detach().numpy().squeeze()
-            else:
-                depth = depth.numpy().squeeze() 
+            with torch.no_grad():
+                depth = model(image_tensor)
+
+                if args.use_tta:
+                    image_tensor_flipped = flip_lr(image_tensor)
+                    depth_flipped = model(image_tensor_flipped)
+                    depth = post_process_depth(depth, depth_flipped)
+
+            depth = depth.cpu().numpy().squeeze()
             
             if padding_values is not None:
                 depth = remove_padding(depth, padding_values)

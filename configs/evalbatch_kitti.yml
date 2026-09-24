@@ -1,10 +1,10 @@
-filenames_file_eval: data_splits/ktti_test.csv
-data_path_eval: /hdd/Automotive_Perception_Group/team_2/kitti_dataset
+filenames_file_eval: data_splits/kitti_test.csv
+data_path_eval: path/to/kitti
 dataset: kitti
 max_depth: 80
 min_depth: 0.001
 do_kb_crop: True
 garg_crop: True
-input_dir: /hdd/hoa_2/models/depth/custom_decoders
+input_dir: path/to/models
 normalize: False
 to_grayscale: False

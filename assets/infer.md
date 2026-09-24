@@ -2,7 +2,7 @@
 
 - If one wants to use the inference script we provided, please refer to [Inference guideline](#1-inference-guideline)
 - If one wants to integrate our ONNX inference into their custom solution, please refer to [Integration guideline](#2-integration-guideline)
-- The pretrained models can be downloaded from our [Model zoo](modelzoo.md)
+- Pretrained weights are not publicly distributed; reference results are listed in the [Model zoo](modelzoo.md)
 
 ## 1. Inference guideline
 1. Update the YAML config file `configs/infer.yml` as follows:

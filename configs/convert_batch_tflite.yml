@@ -1,5 +1,5 @@
-input_dir: /hdd/hoa_2/models/depth/yolo_new/new
-output_path: /hdd/hoa_2/checkpoints/depth/nyu_tiyolov8s_metricleres_userelu_5e-5.onnx
+input_dir: path/to/checkpoints
+output_dir: path/to/tflite_models
 
 # TFlite model input size
 input_width: 640

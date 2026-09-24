@@ -51,7 +51,7 @@ As default, we support Tensorboard to log the training and evaluation progress:
     example:
 
     ```
-    tensorboard --logdir /hdd/hoa/models/pytorch/depth/nyu_yolov8s_metricleres/2025_05_14_15_57_20/train --port 3003
+    tensorboard --logdir path/to/log_dir/nyu_yolov8s_metricleres/2025_05_14_15_57_20/train --port 3003
     ```
 
 - To track the evaluation progress, run the above cli:
@@ -63,7 +63,7 @@ As default, we support Tensorboard to log the training and evaluation progress:
     example:
 
     ```
-    tensorboard --logdir /hdd/hoa/models/pytorch/depth/nyu_yolov8s_metricleres/2025_05_14_15_57_20/eval --port 3003
+    tensorboard --logdir path/to/log_dir/nyu_yolov8s_metricleres/2025_05_14_15_57_20/eval --port 3003
     ```
 
 ## Useful references

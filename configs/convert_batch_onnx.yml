@@ -1,5 +1,5 @@
-input_dir: /hdd/hoa_2/models/depth/yolo_new/new
-output_dir: /hdd/hoa_2/models/depth/yolo_new/new
+input_dir: path/to/checkpoints
+output_dir: path/to/onnx_models
 
 simplify: True
 

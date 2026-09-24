@@ -18,8 +18,8 @@ if __name__ == '__main__':
     parser.add_argument('-id', '--input_dir',           type=str,   help='Directory contains ONNX models', required=False)
 
     # Input
-    parser.add_argument('--filenames_file_eval', help='Text file path (list of images & ground truth depth maps)', type=str, default='/hdd/hoa/Depth_Benchmark/data_splits/nyu_test.txt')
-    parser.add_argument('--data_path_eval', help='Root directory', type=str, default='/hdd/team_2/robodepth/nyu')
+    parser.add_argument('--filenames_file_eval', help='Text file path (list of images & ground truth depth maps)', type=str, default='data_splits/nyu_test.csv')
+    parser.add_argument('--data_path_eval', help='Root directory', type=str, default='path/to/nyu')
     parser.add_argument('-d', '--dataset',                   type=str,   help='dataset to train on, kitti or nyu', default='nyu')
 
     parser.add_argument('--max_depth',            type=float, help='maximum depth for evaluation', default=10)

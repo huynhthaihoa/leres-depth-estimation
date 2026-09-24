@@ -213,4 +213,3 @@ dependencies:
       - yapf==0.40.1
       - yarl==1.9.2
       - zipp==3.16.1
-prefix: /home/hoa/miniconda3/envs/ti

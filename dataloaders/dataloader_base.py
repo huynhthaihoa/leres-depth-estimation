@@ -22,6 +22,37 @@ def _is_numpy_image(img):
     return isinstance(img, np.ndarray) and (img.ndim in {2, 3})
 
 
+class ToTensor(object):
+    def __init__(self, mode, use_imagenet_normalize: bool):
+        """Convert a preprocessed sample into tensors
+
+        Args:
+            mode: one of "train", "eval", "test"
+            use_imagenet_normalize: if True, apply ImageNet normalization on the image
+        """
+        self.mode = mode
+        self.normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]) if use_imagenet_normalize else None
+
+    def __call__(self, sample):
+        # build a new dict so cached samples are never overwritten with tensors
+        sample = dict(sample)
+        image = self.to_tensor(sample["image"])
+        if self.normalize is not None:
+            image = self.normalize(image)
+        sample["image"] = image
+        if "depth" in sample:
+            sample["depth"] = self.to_tensor(sample["depth"])
+        return sample
+
+    def to_tensor(self, pic):
+        """Convert numpy array (H, W, C) or (H, W) into float tensor (C, H, W)"""
+        if not _is_numpy_image(pic):
+            raise TypeError('pic should be ndarray. Got {}'.format(type(pic)))
+        if pic.ndim == 2:
+            pic = pic[:, :, np.newaxis]
+        return torch.from_numpy(np.ascontiguousarray(pic.transpose((2, 0, 1)))).float()
+
+
 def preprocessing_transforms(mode, use_imagenet_normalize: bool):
     return transforms.Compose([
         ToTensor(mode=mode, use_imagenet_normalize=use_imagenet_normalize)
